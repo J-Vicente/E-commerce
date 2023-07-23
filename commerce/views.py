@@ -12,42 +12,49 @@ def index(request):
     return render(request, "commerce/index.html",context)
 
 
-# def aluno_editar(request,id):
-#     aluno = get_object_or_404(Aluno,id=id)
+def product_editar(request,id):
+    product = get_object_or_404(Product,id=id)
    
-#     if request.method == 'POST':
-#         form = AlunoForm(request.POST,instance=aluno)
+    if request.method == 'POST':
+        form = ProductForm(request.POST,instance=product)
 
-#         if form.is_valid():
-#             form.save()
-#             return redirect('aluno_listar')
-#     else:
-#         form = AlunoForm(instance=aluno)
+        if form.is_valid():
+            form.save()
+            return redirect('product_listar')
+    else:
+        form = ProductForm(instance=product)
 
-#     return render(request,'aluno/form_aluno.html',{'form':form})
-
-
-# def aluno_remover(request, id):
-#     aluno = get_object_or_404(Aluno, id=id)
-#     aluno.delete()
-#     return redirect('aluno_listar') # procure um url com o nome 'lista_aluno'
+    return render(request,'commerce/form_product.html',{'form':form})
 
 
-# def aluno_criar(request):
-#     if request.method == 'POST':
-#         form = AlunoForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             form = AlunoForm()
-#     else:
-#         form = AlunoForm()
-
-#     return render(request, "aluno/form_aluno.html", {'form': form})
+def product_remover(request, id):
+    product = get_object_or_404(Product, id=id)
+    product.delete()
+    return redirect('product_listar') 
 
 
-# def aluno_listar(request):
-#     alunos = Aluno.objects.all()
-#     context ={
-#         'alunos':alunos
-#     }
-#     return render(request, "aluno/alunos.html",context)
+def product_criar(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = ProductFormrm()
+    else:
+        form = ProductForm()
+
+    return render(request, "commerce/form_product.html", {'form': form})
+
+
+def product_listar(request):
+    products = Product.objects.all()
+    context ={
+        'products':products
+    }
+    return render(request, "commerce/admin.html",context)
+
+def product(request):
+    products = Product.objects.all()
+    context ={
+        'products':products
+    }
+    return render(request, "commerce/product.html",context)
