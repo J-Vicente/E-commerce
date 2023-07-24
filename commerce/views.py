@@ -5,11 +5,11 @@ from .forms import ProductsForm
 # Create your views here.
 
 def index(request):
-    total_products = Products.objects.count()
+    products = Products.objects.count()
     context = {
-        'total_products' : total_products,
+        'products' : products
     }
-    return render(request, "commerce/index.html",context)
+    return render(request, 'commerce/index.html',context)
 
 
 def product_editar(request,id):
