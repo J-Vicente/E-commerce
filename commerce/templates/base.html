@@ -1,25 +1,26 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{% static 'css/Style.css' %}" rel="stylesheet">
+    <link href="{% static 'commerce/css/Style.css' %}" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><img src="{% static 'img/Logo_Strore.png' %}" alt=""></li>
-                <li><a href="">Início</a></li>
-                <li><a href="">Administração</a></li>
+        <nav class="flex">                      
+            <ul class="flex">
+                <li><img class="logo" src="{% static 'commerce/img/logo.png' %}" alt=""></li>
+                <li><a href="">INICIO</a></li>
+                <li><a href="">ADMINISTRAÇÃO</a></li>
             </ul>
         </nav>
     </header>
-
+    <main>
     {% block center %}
 
     {% endblock %}
+    </main>
 </body>
 </html>

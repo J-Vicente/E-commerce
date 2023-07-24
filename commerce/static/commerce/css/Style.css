@@ -1,0 +1,44 @@
+/* #303030 background
+rgb(233, 3, 19) vermelho*/
+*{
+    background-color: #303030 ;
+}
+.flex{
+    display:flex;
+    align-items: center;
+}
+ul{
+    justify-content: space-between;
+}
+li{
+    list-style: none;
+    margin: 0px 30px 0px 30px ;
+}
+a{
+    font-family:sans-serif;
+    font-style: bold;
+    font-size: x-large;
+    color: aqua;
+    text-decoration: none;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+nav{
+    background-color: #303030;
+}
+.mostrar_produtos{
+    justify-content: space-evenly;
+}
+main{
+    color: white;
+}
+.produto,h2,h3,p{
+    background-color: #191d1d;
+}
+.produto{
+    padding: 20px;
+    border-radius: 10px;
+}

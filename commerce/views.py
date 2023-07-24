@@ -5,7 +5,7 @@ from .forms import ProductsForm
 # Create your views here.
 
 def index(request):
-    products = Products.objects.count()
+    products = Products.objects.all()
     context = {
         'products' : products
     }
@@ -13,7 +13,7 @@ def index(request):
 
 
 def product_editar(request,id):
-    product = get_object_or_404(Product,id=id)
+    product = get_object_or_404(Products,id=id)
    
     if request.method == 'POST':
         form = ProductForm(request.POST,instance=product)
@@ -28,7 +28,7 @@ def product_editar(request,id):
 
 
 def product_remover(request, id):
-    product = get_object_or_404(Product, id=id)
+    product = get_object_or_404(Products, id=id)
     product.delete()
     return redirect('product_listar') 
 
@@ -46,14 +46,14 @@ def product_criar(request):
 
 
 def product_listar(request):
-    products = Product.objects.all()
+    products = Products.objects.all()
     context ={
         'products':products
     }
     return render(request, "commerce/admin.html",context)
 
 def product(request):
-    products = Product.objects.all()
+    products = Products.objects.all()
     context ={
         'products':products
     }
