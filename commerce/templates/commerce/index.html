@@ -2,13 +2,17 @@
 
 {% block center %}
     <div class="mostrar_produtos flex">
-        {% for i in products %}
+        {% for i in products %}   
             <div class="produto">
-                <h2>{{ i.nome }}</h2>
-                <img src="{{ i.imagem.url }}" alt="">
-                <h3>{{ i.preco }} R$</h3>
-                <h3>{{ i.marca }}</h3>
-                <p>{{ i.descricao }}</p>
+                <a href="{% url 'product' i.id %}"> 
+                    <div class="flex nome_produto">
+                        <h2 class="nomeproduto">{{ i.nome }}</h2>
+                    </div>
+                        <img class="produto_home" src="{{ i.imagem.url }}" alt="">
+                        <h3 style="color: aqua;">{{ i.preco }} R$</h3>
+                        <h3>{{ i.marca }}</h3>
+                        <p>{{ i.descricao }}</p>
+                    </a>    
             </div>
         {% endfor %}
     </div>

@@ -2,6 +2,7 @@
 rgb(233, 3, 19) vermelho*/
 *{
     background-color: #303030 ;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .flex{
     display:flex;
@@ -14,12 +15,22 @@ li{
     list-style: none;
     margin: 0px 30px 0px 30px ;
 }
-a{
-    font-family:sans-serif;
+.produto_home{
+    width: 100%;
+    max-height: 250px;
+}
+.nomeproduto{
+    height: 30px;
+}
+.nome_produto{
+    align-items: center;
+}
+.item_nav{
     font-style: bold;
     font-size: x-large;
     color: aqua;
     text-decoration: none;
+    background-color: #303030;
 }
 .logo{
     width: 50px;
@@ -30,15 +41,138 @@ nav{
     background-color: #303030;
 }
 .mostrar_produtos{
-    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    margin-left: 10%;
 }
 main{
     color: white;
 }
-.produto,h2,h3,p{
+.produto,.nomeproduto,h3,p,.nome_produto{
     background-color: #191d1d;
 }
 .produto{
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
     border-radius: 10px;
+    width: 300px;
+    margin-right: 5%;
+}
+.produto_detalhes{
+    background-color: #191d1d;
+    align-items: center;
+    width: 91.5%;
+    height: 700px;
+    border-radius: 20PX;
+    justify-content: space-evenly;
+}
+.info{
+    background-color: #282929;
+    height: 90%;
+    margin: 5% 3% 5% 0%;
+    width: 35%;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 20px;
+}
+.img_produto{
+    height: 90%;
+    margin: 5% 0% 5% 5%;
+    border-radius: 5%;
+    width: 50%;
+    }
+.nome,.preco,.marca,.descricao,.container{
+    background-color: #282929;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.nome{
+    font-size: 50px;
+}
+.preco{
+    color: aqua;
+    font-size: 30px;
+}
+.marca{
+    font-size: 30px;
+}
+.descricao{
+    font-size: 20px;
+    text-align: justify;
+}
+.btn_org{
+    justify-content: space-evenly;
+    background-color: #191d1d;
+}
+a{
+    color: white;
+    text-decoration: none;
+    background-color: #191d1d;
+}
+.btn{
+    width: 100PX;
+    height: 50px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.editar{
+    background-color: aqua;
+}
+.remover{
+    background-color: red;
+}
+.cadastro{
+    background-color: aqua;
+    width: 350px;
+    height: 100px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    font-weight:900;
+    font-size: x-large;
+    margin-bottom: 100PX;
+    margin-top: 30px;
+}
+.alinhamento{
+    justify-content: center;
+    align-items: center;
+}
+.enviar{
+    width: 60%;
+    height: 80px;
+    background-color: aqua;
+    color: white;
+    font-weight: 900;
+    margin-top: 50px;
+    font-size: xx-large;
+}
+.form{
+    justify-content: center;
+    width: 800px;
+}
+.label{
+    margin-bottom: 50px;
+    width: 100%;
+    font-size: x-large;
+    color: aqua;
+}
+input[type="text" i],input[type="number" i]{
+    background-color:#191d1d;
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: white;
+    font-size:large;
+}
+#id_descricao{
+    height: 200px;
+}
+input[type="file" i] {
+    width: 100%;
+    margin-top: 5px;
+    font-size: x-large;
+}
+form{
+    width: 100%;
 }

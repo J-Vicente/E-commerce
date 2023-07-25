@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block center %}
+    <div class="mostrar_produtos flex">
+        {% for i in products %}      
+            <div class="produto">
+                <div class="flex nome_produto">
+                    <h2 class="nomeproduto">{{ i.nome }}</h2>
+                </div>
+                    <img class="produto_home" src="{{ i.imagem.url }}" alt="">
+                    <h3 style="color: aqua;">{{ i.preco }} R$</h3>
+                    <h3>{{ i.marca }}</h3>
+                    <p>{{ i.descricao }}</p>
+                    <div class="btn_org flex">
+                        <a href="{% url 'product_editar' i.id %}">
+                            <div class="btn editar flex">
+                                <p class="editar">Editar</p>
+                            </div>
+                        </a>
+                        <a href="{% url 'product_remover' i.id %}">
+                            <div class="btn remover flex">
+                                <p class="remover">Remover</p>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+            
+        {% endfor %}
+        
+    </div>
+    <div class="alinhamento flex">
+            <div class="cadastro flex">
+                <a class="editar" href="{% url 'product_criar' %}">Cadastrar novo Produto</a>
+            </div>
+        </div>
+
+{% endblock %}

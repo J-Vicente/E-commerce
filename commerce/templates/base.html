@@ -12,8 +12,8 @@
         <nav class="flex">                      
             <ul class="flex">
                 <li><img class="logo" src="{% static 'commerce/img/logo.png' %}" alt=""></li>
-                <li><a href="">INICIO</a></li>
-                <li><a href="">ADMINISTRAÇÃO</a></li>
+                <li><a class="item_nav" href="{% url 'index'%}">INICIO</a></li>
+                <li><a class="item_nav" href="{% url 'product_listar'%}">ADMINISTRAÇÃO</a></li>
             </ul>
         </nav>
     </header>

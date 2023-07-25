@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block center %}
+
+    <div class="produto_detalhes flex">
+        <img class="img_produto" src="{{ products.imagem.url }}" alt="">
+        <div class="info flex">
+            <div class="container">
+                <h2 class="nome">{{ products.nome }}</h2>                
+                <h3 class="preco">{{ products.preco }} R$</h3>
+                <h3 class="marca">{{ products.marca }}</h3>
+                <p class="descricao">{{ products.descricao }}</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

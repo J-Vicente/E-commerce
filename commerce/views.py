@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404,redirect
 from .models import Products
 from .forms import ProductsForm
 
@@ -16,13 +16,13 @@ def product_editar(request,id):
     product = get_object_or_404(Products,id=id)
    
     if request.method == 'POST':
-        form = ProductForm(request.POST,instance=product)
+        form = ProductsForm(request.POST,instance=product)
 
         if form.is_valid():
             form.save()
             return redirect('product_listar')
     else:
-        form = ProductForm(instance=product)
+        form = ProductsForm(instance=product)
 
     return render(request,'commerce/form_product.html',{'form':form})
 
@@ -35,12 +35,13 @@ def product_remover(request, id):
 
 def product_criar(request):
     if request.method == 'POST':
-        form = ProductForm(request.POST)
+        form = ProductsForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            form = ProductFormrm()
+            form = ProductsForm()
+            return redirect('product_listar')
     else:
-        form = ProductForm()
+        form = ProductsForm()
 
     return render(request, "commerce/form_product.html", {'form': form})
 
@@ -52,8 +53,8 @@ def product_listar(request):
     }
     return render(request, "commerce/admin.html",context)
 
-def product(request):
-    products = Products.objects.all()
+def product(request, id):
+    products = get_object_or_404(Products,id=id)
     context ={
         'products':products
     }

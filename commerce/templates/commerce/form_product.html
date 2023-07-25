@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block center %}
+<div class="alinhamento flex">
+    <div>
+        <div class="flex">
+            <h2 style="font-size: xx-large;"> Cadastro de Produto</h2>
+        </div>
+        <div class="form flex">        
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="label">
+                    <label for="nome" class="form-label">Nome</label>
+                    {{ form.nome }}
+                </div>
+                
+                <div class="label">
+                    <label for="nome" class="form-label">Preço</label>
+                    {{ form.preco }}
+                </div>
+
+                <div class="label">
+                    <label for="nome" class="form-label">Marca</label>
+                    {{ form.marca }}
+                </div>
+                
+                <div class="label">
+                    <label for="nome" class="form-label">Descrição</label>
+                    {{ form.descricao }}
+                </div>
+
+                <div class="label">
+                    <label for="nome" class="form-label">Imagem</label>
+                    {{ form.imagem }}
+                </div>
+
+                <div class="alinhamento flex">               
+                    <button type="submit" class="btn enviar">Confirmar</button>
+                </div>
+            </form> 
+        </div>                       
+        </div>
+    </div>
+</div>
+{% endblock %}
+<!-- href="{% url 'product_listar' %}" -->
