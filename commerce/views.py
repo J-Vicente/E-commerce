@@ -16,8 +16,7 @@ def product_editar(request,id):
     product = get_object_or_404(Products,id=id)
    
     if request.method == 'POST':
-        form = ProductsForm(request.POST,instance=product)
-
+        form = ProductsForm(request.POST,request.FILES,instance=product)
         if form.is_valid():
             form.save()
             return redirect('product_listar')
